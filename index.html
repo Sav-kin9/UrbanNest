@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UrbanNest Shortlets</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+
+  <header class="header">
+    <video autoplay muted loop class="video-bg">
+      <source src="vid/header-bg.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+
+    <nav class="navbar">
+      <div class="nav-container">
+        <h1 class="logo">UrbanNest</h1>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#">Stays</a></li>
+          <li><a href="#">Shoots</a></li>
+          <li><a href="#">Events</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#" class="btn">Login</a></li>
+        </ul>
+        <div class="menu-toggle" id="menuToggle">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="hero-text">
+      <h2>Book Verified Apartments for Stays, Shoots & Events</h2>
+      <p>Seamless, Secure, and Stylish Booking Experience</p>
+      <a href="#" class="btn-hero">Explore Listings</a>
+    </div>
+  </header>
+
+<!-- CITY GRID SECTION -->
+
+<section class="cities-section">
+  <div class="section-header">
+    <h2>Explore Shortlets by Location</h2>
+    <p>Select from our top verified cities to find your perfect stay.</p>
+  </div>
+  
+  <div class="city-grid">
+    <div class="city-card" style="background-image: url('img/lagos.jpg');">
+      <div class="overlay">
+        <h3>Lagos</h3>
+      </div>
+    </div>
+    <div class="city-card" style="background-image: url('img/abuja.jpg');">
+      <div class="overlay">
+        <h3>Abuja</h3>
+      </div>
+    </div>
+    <div class="city-card" style="background-image: url('img/ph.jpg');">
+      <div class="overlay">
+        <h3>Port Harcourt</h3>
+      </div>
+    </div>
+    <div class="city-card" style="background-image: url('img/uyo.jpg');">
+      <div class="overlay">
+        <h3>Uyo</h3>
+      </div>
+    </div>
+    <div class="city-card" style="background-image: url('img/enugu.jpg');">
+      <div class="overlay">
+        <h3>Enugu</h3>
+      </div>
+    </div>
+    <div class="city-card" style="background-image: url('img/owerri.jpg');">
+      <div class="overlay">
+        <h3>Owerri</h3>
+      </div>
+    </div>
+    <div class="city-card" style="background-image: url('img/benue.jpg');">
+      <div class="overlay">
+        <h3>Benue</h3>
+      </div>
+    </div>
+    <div class="city-card" style="background-image: url('img/bayelsa.jpg');">
+      <div class="overlay">
+        <h3>Bayelsa</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
