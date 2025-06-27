@@ -1,0 +1,142 @@
+body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #FAF8F6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-box {
+      background: #fff;
+      padding: 2.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 420px;
+    }
+
+    .login-box h2 {
+      text-align: center;
+      color: #2F2F2F;
+      margin-bottom: 1.5rem;
+    }
+
+    .login-box form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .login-box input {
+      padding: 0.9rem;
+      border: 1px solid #ccc;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      outline: none;
+      transition: border 0.2s ease;
+    }
+
+    .login-box input:focus {
+      border-color: #6AA57B;
+    }
+
+    .remember-forgot {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    .remember-forgot a {
+      color: #6AA57B;
+      text-decoration: none;
+    }
+
+    .remember-forgot a:hover {
+      text-decoration: underline;
+    }
+
+    .login-btn {
+      padding: 0.9rem;
+      background-color: #6AA57B;
+      color: #fff;
+      border: none;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .login-btn:hover {
+      background-color: #578C66;
+    }
+
+    .signup-link {
+      margin-top: 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    .signup-link a {
+      color: #6AA57B;
+      text-decoration: none;
+    }
+
+    .signup-link a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 480px) {
+      .login-box {
+        margin: 1rem;
+        padding: 2rem;
+      }
+
+      .login-box h2 {
+        font-size: 1.5rem;
+      }
+    }
+
+
+    /* === Floating WhatsApp Button === */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25D366;
+  color: white;
+  font-size: 1.6rem;
+  padding: 0.8rem 1rem;
+  border-radius: 50%;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  color: white;
+}
+
+/* WHATSAPP RESPONSIVE BTN */
+@media (max-width: 768px) {
+  .whatsapp-float {
+    bottom: 15px;
+    right: 15px;
+    font-size: 1.4rem;
+    padding: 0.7rem 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .whatsapp-float {
+    bottom: 12px;
+    right: 12px;
+    font-size: 1.3rem;
+    padding: 0.6rem 0.8rem;
+  }
+}

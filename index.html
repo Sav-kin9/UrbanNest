@@ -4,8 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>UrbanNest Shortlets</title>
+  <link rel="icon" type="image/x-icon" href="img/favicon.ico">
   <link rel="stylesheet" href="style.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<!-- Flatpickr CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
 <body>
 
@@ -24,7 +29,7 @@
           <li><a href="#">Shoots</a></li>
           <li><a href="#">Events</a></li>
           <li><a href="#">Contact</a></li>
-          <li><a href="#" class="btn">Login</a></li>
+          <li><a href="urbannest-login/login.html" class="btn">Login</a></li>
         </ul>
         <div class="menu-toggle" id="menuToggle">
           <div class="bar"></div>
@@ -37,7 +42,7 @@
     <div class="hero-text">
       <h2>Book Verified Apartments for Stays, Shoots & Events</h2>
       <p>Seamless, Secure, and Stylish Booking Experience</p>
-      <a href="#" class="btn-hero">Explore Listings</a>
+      <a href="#listings-section" class="btn-hero">Explore Listings</a>
     </div>
   </header>
 
@@ -93,7 +98,180 @@
   </div>
 </section>
 
+<!-- Listings SECTION -->
+
+<section id="listings-section" class="listings-section">
+  <div class="section-header">
+    <h2>Featured Apartments</h2>
+    <p>Top-rated shortlets available now in popular locations.</p>
+  </div>
+
+  <div class="listings-grid">
+    <!-- Card 1 -->
+    <div class="listing-card">
+      <img src="img/apt1.jpg" alt="Apartment 1">
+      <div class="listing-info">
+        <h3>Modern 2BR in Lekki</h3>
+        <p class="location"><i class="fas fa-map-marker-alt"></i> Lagos</p>
+        <p class="price">₦45,000 / night</p>
+        <p class="rating"><i class="fas fa-star"></i> 4.8 (120)</p>
+        <a href="#" class="btn-book">Book Now</a>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="listing-card">
+      <img src="img/apt2.jpg" alt="Apartment 2">
+      <div class="listing-info">
+        <h3>Luxury Studio in Wuse</h3>
+        <p class="location"><i class="fas fa-map-marker-alt"></i> Abuja</p>
+        <p class="price">₦38,000 / night</p>
+        <p class="rating"><i class="fas fa-star"></i> 4.6 (95)</p>
+        <a href="#" class="btn-book">Book Now</a>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="listing-card">
+      <img src="img/apt3.jpg
+      " alt="Apartment 3">
+      <div class="listing-info">
+        <h3>Cozy Loft in Uyo</h3>
+        <p class="location"><i class="fas fa-map-marker-alt"></i> Uyo</p>
+        <p class="price">₦30,000 / night</p>
+        <p class="rating"><i class="fas fa-star"></i> 4.7 (89)</p>
+        <a href="#" class="btn-book">Book Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FILTER SECTION -->
+
+<section class="filter-section">
+  <div class="filter-container">
+    <h2>Find Your Ideal Apartment</h2>
+    <form class="filter-form">
+      <input type="text" placeholder="Enter city or location" />
+
+      <input type="text" id="checkin" placeholder="Check-in date" />
+
+      <select>
+        <option disabled selected>Apartment Type</option>
+        <option>Studio</option>
+        <option>1 Bedroom</option>
+        <option>2 Bedroom</option>
+        <option>Penthouse</option>
+      </select>
+
+      <div class="price-range">
+        <label for="price">Max Price: <span id="price-value">₦50,000</span></label>
+        <input type="range" id="price" name="price" min="10000" max="200000" step="10000" value="50000" />
+      </div>
+
+
+      <button type="submit">Search</button>
+    </form>
+  </div>
+</section>
+
+<!-- BOOKING SECTION -->
+
+<section class="booking-section" id="booking">
+  <div class="booking-container">
+    <h2>Book Your Stay</h2>
+    <p>Fill in your details and confirm your apartment booking easily.</p>
+
+    <form 
+      class="booking-form"
+      action="thank-you.html"
+      method="POST"
+      id="bookingForm">
+
+      <input type="text" placeholder="Full Name" required />
+      <input type="email" placeholder="Email Address" required />
+      <input type="tel" placeholder="Phone Number" required />
+      
+      <input type="text" id="checkin-date" placeholder="Check-in Date" required />
+      <input type="text" id="checkout-date" placeholder="Check-out Date" required />
+
+      <select required>
+        <option disabled selected>Number of Guests</option>
+        <option>1 Guest</option>
+        <option>2 Guests</option>
+        <option>3 Guests</option>
+        <option>4+</option>
+      </select>
+
+      <button type="submit">Confirm Booking</button>
+    </form>
+  </div>
+</section>
+
+
+<!-- FOOTER BEGINS -->
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-col brand">
+      <h3>UrbanNest</h3>
+      <p>Verified shortlets for stays, shoots & events across major Nigerian cities.</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">Stays</a></li>
+        <li><a href="#">Shoots</a></li>
+        <li><a href="#">Events</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:saviournkanga@gmail.com">support@urbannest.com</a></li>
+        <li>
+          <a href="https://wa.me/2347026893687?text=Hello%20UrbanNest!%20I%20want%20to%20book%20a%20__________." target="_blank" class="whatsapp-float" aria-label="Chat on Whatsapp">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+
+        </li>
+        <li><a href="#">Lagos, Nigeria</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Follow Us</h4>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-x-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 UrbanNest. All rights reserved.</p>
+  </div>
+</footer>
+
+
+<!-- Booking Confirmation Modal -->
+<div id="bookingModal" class="modal">
+  <div class="modal-content">
+    <h3>Booking Confirmed!</h3>
+    <p>Thank you for choosing UrbanNest. A confirmation email will be sent shortly.</p>
+    <button onclick="closeModal()">Close</button>
+  </div>
+</div>
+
+
 
   <script src="script.js"></script>
+  <!-- Flatpickr JS -->
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
 </body>
 </html>
