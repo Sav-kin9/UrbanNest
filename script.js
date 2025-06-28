@@ -54,43 +54,48 @@ flatpickr("#checkin-date", {
     minDate: new Date().fp_incr(1)
   });
 
+// EVERYTHING BOOKING FORM
+// 
+// 
+
   const form = document.getElementById("bookingForm");
-  if (form) {
-    form.addEventListener("submit", function (e) {
-      // Check if JS is enabled and modal exists
-      const modal = document.getElementById("bookingModal");
-      if (modal) {
-        e.preventDefault(); // Only prevent if modal is in use
-        modal.style.display = "flex";
-        form.reset();
-      }
-    });
-  }
+const modal = document.getElementById("bookingModal");
 
-  function closeModal() {
-    document.getElementById("bookingModal").style.display = "none";
-  }
+if (form && modal) {
+  form.addEventListener("submit", function (e) {
+    e.preventDefault(); // Prevent normal form submission
+    modal.style.display = "flex"; // Show confirmation popup
 
-  window.addEventListener("click", function (e) {
-    const modal = document.getElementById("bookingModal");
-    if (e.target === modal) closeModal();
+    // Delay, then manually submit to redirect to thank-you.html
+    setTimeout(() => {
+      form.submit(); // Now goes to the action="urbannest-thankyou/thank-you.html"
+    }, 2500);
+  });
+}
+
+// Close modal when clicking the close button or background
+function closeModal() {
+  modal.style.display = "none";
+}
+
+window.addEventListener("click", function (e) {
+  if (e.target === modal) closeModal();
+});
+
+
+  // scroll-to-top button
+
+  const scrollBtn = document.querySelector('.scroll-to-top');
+
+  window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 300) {
+      scrollBtn.style.display = 'block';
+    } else {
+      scrollBtn.style.display = 'none';
+    }
   });
 
-
-  // Handle booking form submission
-  document.querySelector(".booking-form").addEventListener("submit", function (e) {
-    e.preventDefault(); // prevent real submission
-    document.getElementById("bookingModal").style.display = "flex"; // show modal
-    this.reset(); // clear form
-  });
-
-  // Close the modal
-  function closeModal() {
-    document.getElementById("bookingModal").style.display = "none";
-  }
-
-  // Optional: Close modal when clicking outside of it
-  window.addEventListener("click", function (e) {
-    const modal = document.getElementById("bookingModal");
-    if (e.target === modal) closeModal();
+  scrollBtn.addEventListener('click', function (e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
