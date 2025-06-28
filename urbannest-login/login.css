@@ -21,7 +21,7 @@ body {
   width: 100%;
   top: 0;
   padding: 1rem 2rem;
-  background: rgba(0, 0, 0, 0.4);
+  background: #2c9e7e;;
   backdrop-filter: blur(8px);
 }
 
