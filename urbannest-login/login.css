@@ -1,106 +1,294 @@
+/* === GLOBAL RESET === */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #FAF8F6;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
+  font-family: 'Segoe UI', sans-serif;
+  background: #FAF8F6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
 
-    .login-box {
-      background: #fff;
-      padding: 2.5rem;
-      border-radius: 1rem;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-      width: 100%;
-      max-width: 420px;
-    }
+/* NAVBAR STARTS HERE */
 
-    .login-box h2 {
-      text-align: center;
-      color: #2F2F2F;
-      margin-bottom: 1.5rem;
-    }
+.navbar {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  padding: 1rem 2rem;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+}
 
-    .login-box form {
-      display: flex;
-      flex-direction: column;
-      gap: 1.2rem;
-    }
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-    .login-box input {
-      padding: 0.9rem;
-      border: 1px solid #ccc;
-      border-radius: 0.5rem;
-      font-size: 1rem;
-      outline: none;
-      transition: border 0.2s ease;
-    }
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #fff;
+}
 
-    .login-box input:focus {
-      border-color: #6AA57B;
-    }
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+  transition: all 0.3s ease-in-out;
+}
 
-    .remember-forgot {
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.9rem;
-      color: #555;
-    }
+.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
 
-    .remember-forgot a {
-      color: #6AA57B;
-      text-decoration: none;
-    }
+.nav-links li a.btn {
+  padding: 0.5rem 1rem;
+  background: #D4A373;
+  border-radius: 8px;
+  color: #000;
+}
 
-    .remember-forgot a:hover {
-      text-decoration: underline;
-    }
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 999; /* Ensure it's above everything */
+  transition: transform 0.3s ease-in-out;
+}
 
-    .login-btn {
-      padding: 0.9rem;
-      background-color: #6AA57B;
-      color: #fff;
-      border: none;
-      border-radius: 0.5rem;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
+.menu-toggle .bar {
+  height: 3px;
+  width: 25px;
+  background: white;
+  transition: 0.4s;
+  border-radius: 4px;
+}
+.menu-toggle:hover .bar {
+  transform: scaleX(1.3);
+}
 
-    .login-btn:hover {
-      background-color: #578C66;
-    }
+/* Active hamburger transforms into X */
+.menu-toggle.active .bar:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.menu-toggle.active .bar:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.active .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}/* Responsive Styling */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.95);
+    width: 100%;
+    height: 100vh;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 2rem;
+    z-index: 998;
+    opacity: 0;
+  }
 
-    .signup-link {
-      margin-top: 1rem;
-      text-align: center;
-      font-size: 0.9rem;
-    }
+  .hero-text {
+    position: relative;
+    margin-top: 3rem;
+    z-index: -1;
+  }
 
-    .signup-link a {
-      color: #6AA57B;
-      text-decoration: none;
-    }
+  .menu-toggle {
+    display: flex;
+  }
 
-    .signup-link a:hover {
-      text-decoration: underline;
-    }
+  .nav-links.show {
+    display: flex !important;
+    opacity: 1 !important;
+  }
+}
 
-    @media (max-width: 480px) {
-      .login-box {
-        margin: 1rem;
-        padding: 2rem;
-      }
+/* === LOGIN BOX === */
+.login-box {
+  background: #fff;
+  padding: 2.5rem;
+  margin-top: 50px;
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 420px;
+}
 
-      .login-box h2 {
-        font-size: 1.5rem;
-      }
-    }
+.login-box h2 {
+  text-align: center;
+  color: #2F2F2F;
+  margin-bottom: 1.5rem;
+}
 
+.login-box form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
 
-    /* === Floating WhatsApp Button === */
+/* === INPUT FIELDS === */
+.login-box input {
+  padding: 0.9rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.2s ease;
+}
+
+.login-box input:focus {
+  border-color: #6AA57B;
+}
+
+/* === PASSWORD TOGGLE === */
+.password-wrapper {
+  position: relative;
+}
+
+.toggle-password {
+  position: absolute;
+  top: 50%;
+  right: 14px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #888;
+  font-size: 1rem;
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+.input-wrapper input {
+  width: 100%;
+  padding: 0.75rem 2.5rem 0.75rem 0.75rem; /* space for icon on right */
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border 0.2s ease;
+}
+
+.input-wrapper input:focus {
+  border-color: #6AA57B;
+}
+
+/* Eye Icon */
+.toggle-password {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+/* Error message */
+.error {
+  color: crimson;
+  font-size: 0.85rem;
+  margin-top: 0.3rem;
+  display: block;
+}
+
+/* Mobile tweaks */
+@media (max-width: 480px) {
+  .input-wrapper input {
+    font-size: 0.95rem;
+    padding: 0.7rem 2.2rem 0.7rem 0.75rem;
+  }
+
+  .toggle-password {
+    right: 12px;
+    font-size: 0.95rem;
+  }
+}
+
+/* === REMEMBER/LOGIN === */
+.remember-forgot {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.remember-forgot a {
+  color: #6AA57B;
+  text-decoration: none;
+}
+
+.remember-forgot a:hover {
+  text-decoration: underline;
+}
+
+/* === BUTTON === */
+.login-btn {
+  padding: 0.9rem;
+  background-color: #6AA57B;
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.login-btn:hover {
+  background-color: #578C66;
+}
+
+/* === SIGNUP LINK === */
+.signup-link {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.signup-link a {
+  color: #6AA57B;
+  text-decoration: none;
+}
+
+.signup-link a:hover {
+  text-decoration: underline;
+}
+
+/* === RESPONSIVENESS === */
+@media (max-width: 480px) {
+  .login-box {
+    margin: 1rem;
+    padding: 2rem;
+  }
+
+  .login-box h2 {
+    font-size: 1.5rem;
+  }
+
+  .toggle-password {
+    right: 12px;
+  }
+}
+
+/* === FLOATING WHATSAPP BUTTON === */
 .whatsapp-float {
   position: fixed;
   bottom: 20px;
@@ -122,7 +310,6 @@ body {
   color: white;
 }
 
-/* WHATSAPP RESPONSIVE BTN */
 @media (max-width: 768px) {
   .whatsapp-float {
     bottom: 15px;

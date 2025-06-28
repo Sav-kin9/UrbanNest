@@ -8,7 +8,7 @@
 body, html {
   height: 100%;
   font-family: 'Segoe UI', sans-serif;
-  scroll-behaviour: smooth;
+  scroll-behavior: smooth;
 }
 
 .header {
@@ -27,6 +27,8 @@ body, html {
   object-fit: cover;
   z-index: -1;
 }
+
+/* NAVBAR STARTS HERE */
 
 .navbar {
   position: absolute;
@@ -127,6 +129,8 @@ body, html {
   text-decoration: none;
   color: white;
   font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
 /* Responsive Styling */
@@ -484,7 +488,12 @@ body, html {
   font-family: inherit;
 }
 
-.booking-form button {
+.btn {
+  text-decoration: none;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #6AA57B;
   color: white;
   padding: 0.9rem;
@@ -495,7 +504,7 @@ body, html {
   transition: background 0.3s ease;
 }
 
-.booking-form button:hover {
+.btn:hover {
   background-color: #578C66;
 }
 
@@ -741,12 +750,13 @@ body, html {
   left: 25px;
   background-color: #6AA57B;
   color: white;
-  font-size: 1.3rem;
+  font-size: 0.9rem;
   padding: 0.8rem;
   border-radius: 50%;
   text-align: center;
   z-index: 1000;
-  display: none; /* Hidden by default */
+  display: block; /* Hidden by default */
+  visibility: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s;
   box-shadow: 0 8px 15px rgba(0,0,0,0.2);
 }

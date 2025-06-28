@@ -54,44 +54,15 @@ flatpickr("#checkin-date", {
     minDate: new Date().fp_incr(1)
   });
 
-// EVERYTHING BOOKING FORM
-// 
-// 
-
-  const form = document.getElementById("bookingForm");
-const modal = document.getElementById("bookingModal");
-
-if (form && modal) {
-  form.addEventListener("submit", function (e) {
-    e.preventDefault(); // Prevent normal form submission
-    modal.style.display = "flex"; // Show confirmation popup
-
-    // Delay, then manually submit to redirect to thank-you.html
-    setTimeout(() => {
-      form.submit(); // Now goes to the action="urbannest-thankyou/thank-you.html"
-    }, 2500);
-  });
-}
-
-// Close modal when clicking the close button or background
-function closeModal() {
-  modal.style.display = "none";
-}
-
-window.addEventListener("click", function (e) {
-  if (e.target === modal) closeModal();
-});
-
-
   // scroll-to-top button
 
   const scrollBtn = document.querySelector('.scroll-to-top');
 
   window.addEventListener('scroll', () => {
     if (window.pageYOffset > 300) {
-      scrollBtn.style.display = 'block';
+      scrollBtn.style.visibility = 'visible';
     } else {
-      scrollBtn.style.display = 'none';
+      scrollBtn.style.visibility = 'none';
     }
   });
 
